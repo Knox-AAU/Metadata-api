@@ -21,3 +21,13 @@ Use postman and import the documentation from the file "P5-Metadata-api.postman_
 2) Make the changes you want to make
 3) Push them into a branch
 4) Make a pull request
+5) Ensure pipelines pass
+
+## To use linter
+```bash
+pylint ./**/*.py
+```
+
+## TODO
+- Remove testing functions
+- Remove testing functions from documentation
