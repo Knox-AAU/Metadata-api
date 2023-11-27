@@ -1,4 +1,4 @@
-name: Run Linting Pipeline
+name: Linting Pipeline
 
 on: 
   pull_request:
