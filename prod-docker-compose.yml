@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  metadataapi_api:
+    image: python:3.9
+    container_name: metadataapi_api
+    environment:
+      - PYTHON_ENV=production
+    command: sh -c "pip install -r /app/requirements.txt && python -u /app/src/app.py"
+    volumes:
+      - .:/app
+    ports:
+      - "5000:5000"
+    networks:
+      - metadataapi_network
+    depends_on:
+      - metadataapi_database
+
+  metadataapi_database:
+    image: postgres:14
+    container_name: metadataapi_database
+    environment:
+      POSTGRES_DB: mydatabase
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - metadataapi_network
+
+networks:
+  metadataapi_network:
+    driver: bridge
+
+volumes:
+  postgres-data:

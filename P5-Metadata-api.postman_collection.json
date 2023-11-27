@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "7085b715-1a0f-41de-ba42-0d41bc8c2377",
+		"name": "P5-Metadata api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Health check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add UUID",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"uuid\": \"{{$guid}}\",\r\n    \"metadata\": [\r\n        { \"author\": \"John Snut\", \"pages\": 420 }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/binduuid",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"binduuid"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TESTING_Get uuids",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/getuuids",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"getuuids"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TESTING_Get triples",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/gettriples",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"gettriples"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add triple",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"uuid\": \"b3d47bdd-5190-4c43-892c-dab379a72ebc\",\r\n    \"triple\": [\r\n        \"knox-kb01.srv.aau.dk/Barack_Obama\", \r\n        \"http://dbpedia.org/ontology/spouse\", \r\n        \"knox-kb01.srv.aau.dk/Michelle_Obama\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/bindtriple",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"bindtriple"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get metadata from triple",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"triple\": [\r\n        \"knox-kb01.srv.aau.dk/Barack_Obama\",\r\n        \"http://dbpedia.org/ontology/spouse\",\r\n        \"knox-kb01.srv.aau.dk/Michelle_Obama\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/getMetadata",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"getMetadata"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
