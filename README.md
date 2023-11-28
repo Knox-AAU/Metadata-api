@@ -1,17 +1,17 @@
 # Meta data API 
 
 ## Installation
-0a. Ensure you have docker and docker-compose
-0b. Optionally setup a virtual environment
-1a. If running in production mode: 
+0. Ensure you have docker and docker-compose
+1. Optionally setup a virtual environment
+2. If running in production mode: 
 ```bash
 docker-compose -f prod-docker-compose.yml up
 ```
-1b. If running in development mode:
+3. If running in development mode:
 ```bash
 docker-compose -f dev-docker-compose.yml up
 ```
-2. Access the api at the specified host and port (if not changed: http://localhost:5000/)
+4. Access the api at the specified host and port (if not changed: http://localhost:5000/)
 
 ## Documentation
 Use postman and import the documentation from the file "P5-Metadata-api.postman_collection.json"
@@ -31,3 +31,4 @@ pylint ./**/*.py
 ## TODO
 - Remove testing functions
 - Remove testing functions from documentation
+- Update the functionality such that if a triple already exists in the database, then ignore the triple and store the metadata in the JSON object in the database connected to that triple
