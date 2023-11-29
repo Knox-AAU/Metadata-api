@@ -1,4 +1,4 @@
-name: Linting Pipeline
+name: General Pipeline
 
 on: 
   pull_request:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   linter:
-    name: PyLint check
+    name: Lint
     runs-on: ubuntu-latest
     steps: 
       - name: linter checkout
@@ -16,3 +16,14 @@ jobs:
           fetch-depth: 0
       - run: pip install -r requirements.txt
       - run: pylint ./**/*.py
+
+  testing:
+    name: Unit test
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout and testing
+        uses: actions/checkout@v3
+        with: 
+          fetch-depth: 0
+      - run: pip install -r requirements.txt
+      - run: "python3 -m unittest discover -s src -p 'test_*.py'"

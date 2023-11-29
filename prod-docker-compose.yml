@@ -5,8 +5,8 @@ services:
     image: python:3.9
     container_name: metadataapi_api
     environment:
-      - PYTHON_ENV=production
-      - DATABASE_URI='postgresql://myuser:mypassword@metadataapi_database:5432/mydatabase'
+      PYTHON_ENV: production
+      DATABASE_URI: postgresql://myuser:mypassword@metadataapi_database:5432/mydatabase
     command: sh -c "pip install -r /app/requirements.txt && python -u /app/src/app.py"
     volumes:
       - .:/app
