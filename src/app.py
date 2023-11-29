@@ -1,7 +1,5 @@
 """ Metadataapi entrance file """
 import os
-import sys
-import json
 from uuid import uuid4
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
