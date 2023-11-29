@@ -1,1 +1,50 @@
+# Created by https://www.toptal.com/developers/gitignore/api/python,flask,git
+# Edit at https://www.toptal.com/developers/gitignore?templates=python,flask,git
+
+### Flask ###
+instance/*
+!instance/.gitignore
+.webassets-cache
+.env
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Flask stuff:
+instance/
+
+# Environments
 .venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+### Git ###
+*.orig
+*.BACKUP.*
+*.BASE.*
+*.LOCAL.*
+*.REMOTE.*
+*_BACKUP_*.txt
+*_BASE_*.txt
+*_LOCAL_*.txt
+*_REMOTE_*.txt

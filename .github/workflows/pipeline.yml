@@ -1,4 +1,4 @@
-name: Linting Pipeline
+name: General Pipeline
 
 on: 
   pull_request:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   linter:
-    name: PyLint check
+    name: Lint
     runs-on: ubuntu-latest
     steps: 
       - name: linter checkout
