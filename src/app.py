@@ -83,7 +83,7 @@ def get_metadata():
                 res = []
 
                 for data in metadata:
-                    res.append(data.mdata[0])
+                    res.append(data.mdata)
 
                 return jsonify({'success': True, 'message': res })
 
